@@ -1,0 +1,505 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025下半年 行銷方案互動儀表板</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Warm Neutrals -->
+    <!-- Application Structure Plan: A tab-based SPA design. A top navigation bar allows users to select a marketing platform (IG, TikTok, etc.). The main view displays a detailed comparison table for the selected platform. This structure was chosen to facilitate quick, direct comparison between different service packages, which is the primary user task, rather than forcing a long scroll through disparate information. -->
+    <!-- Visualization & Content Choices: Detailed data is in structured HTML tables (Goal: Organize) for deep dives. The "Trial Plan" info is integrated directly into the main comparison table for a unified view. This approach layers information from general overview to specific details, guided by user interaction. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: #fdfcfb;
+            color: #4a4a4a;
+        }
+        .nav-button {
+            transition: all 0.3s ease;
+        }
+        .nav-button.active {
+            color: #0d9488;
+            border-bottom-color: #0d9488;
+        }
+        .content-section {
+            display: none;
+        }
+        .content-section.active {
+            display: block;
+        }
+        .table-responsive {
+            display: block;
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        .table-responsive table {
+            width: 100%;
+            min-width: 1000px;
+        }
+        .value-add-item {
+            color: #0d9488;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body class="bg-stone-50">
+
+    <div id="app" class="container mx-auto p-4 md:p-8 max-w-7xl">
+        <header class="text-center mb-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-teal-800">2025下半年 行銷方案儀表板</h1>
+            <p class="text-stone-600 mt-2">一個互動式的平台，助您快速比較與選擇最適合的行銷方案。</p>
+        </header>
+
+        <nav id="navigation" class="flex flex-wrap justify-center border-b-2 border-stone-200 mb-8">
+            <button data-target="ig" class="nav-button active text-lg font-semibold py-3 px-4 md:px-6 border-b-4 border-transparent">IG 影音</button>
+            <button data-target="tiktok" class="nav-button text-lg font-semibold py-3 px-4 md:px-6 border-b-4 border-transparent">TikTok</button>
+            <button data-target="blogger" class="nav-button text-lg font-semibold py-3 px-4 md:px-6 border-b-4 border-transparent">部落客</button>
+            <button data-target="youtube" class="nav-button text-lg font-semibold py-3 px-4 md:px-6 border-b-4 border-transparent">YouTube</button>
+            <button data-target="forum" class="nav-button text-lg font-semibold py-3 px-4 md:px-6 border-b-4 border-transparent">論壇</button>
+            <button data-target="news" class="nav-button text-lg font-semibold py-3 px-4 md:px-6 border-b-4 border-transparent">新聞口碑</button>
+        </nav>
+
+        <main>
+            <section id="details-section">
+                <!-- IG Content -->
+                <div id="ig-content" class="content-section active space-y-8">
+                    <div class="bg-white p-6 rounded-2xl shadow-lg">
+                        <h3 class="text-2xl font-bold mb-4 text-teal-700">IG 影音方案詳情</h3>
+                        <p class="text-stone-600 mb-6">此區塊提供 Instagram 影音行銷方案的詳細比較，包含合作的創作者數量、內容規格、素材授權範圍以及預期的成效目標。您可以透過下表來評估哪個方案最符合您的品牌曝光需求與預算。</p>
+                        <div class="table-responsive">
+                            <table class="w-full text-left border-collapse">
+                                <thead class="bg-teal-50">
+                                    <tr>
+                                        <th class="p-3 font-bold uppercase text-teal-800 border-b border-stone-200">項目</th>
+                                        <th class="p-3 font-bold uppercase text-teal-800 border-b border-stone-200">方案一</th>
+                                        <th class="p-3 font-bold uppercase text-teal-800 border-b border-stone-200">方案二</th>
+                                        <th class="p-3 font-bold uppercase text-teal-800 border-b border-stone-200">方案三</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="hover:bg-stone-50">
+                                        <td class="p-3 font-bold border-b border-stone-200">策略定位</td>
+                                        <td class="p-3 border-b border-stone-200">穩健起步的品牌曝光選擇，累積基礎素材。</td>
+                                        <td class="p-3 border-b border-stone-200">兼具品牌認知與搜尋曝光，讓品牌「被認出」。</td>
+                                        <td class="p-3 border-b border-stone-200">深度操作，集中火力擴大佈局，讓品牌「停在消費者眼前」。</td>
+                                    </tr>
+                                    <tr class="hover:bg-stone-50">
+                                        <td class="p-3 font-bold border-b border-stone-200">費用</td>
+                                        <td class="p-3 border-b border-stone-200">$240,000</td>
+                                        <td class="p-3 border-b border-stone-200">$400,000</td>
+                                        <td class="p-3 border-b border-stone-200">$800,000</td>
+                                    </tr>
+                                    <tr class="hover:bg-stone-50">
+                                        <td class="p-3 font-bold border-b border-stone-200">合作數量</td>
+                                        <td class="p-3 border-b border-stone-200">3 位影音創作者</td>
+                                        <td class="p-3 border-b border-stone-200">5 位影音創作者</td>
+                                        <td class="p-3 border-b border-stone-200">10 位影音創作者</td>
+                                    </tr>
+                                    <tr class="hover:bg-stone-50">
+                                        <td class="p-3 font-bold border-b border-stone-200">內容規格</td>
+                                        <td class="p-3 border-b border-stone-200" colspan="3">每位 1 則 IG Reels + 3 則限時動態</td>
+                                    </tr>
+                                    <tr class="hover:bg-stone-50">
+                                        <td class="p-3 font-bold border-b border-stone-200">素材授權</td>
+                                        <td class="p-3 border-b border-stone-200">無</td>
+                                        <td class="p-3 border-b border-stone-200" colspan="2">授權一年，可跨平台應用</td>
+                                    </tr>
+                                    <tr class="hover:bg-stone-50">
+                                        <td class="p-3 font-bold border-b border-stone-200">加值項目</td>
+                                        <td class="p-3 border-b border-stone-200">-</td>
+                                        <td class="p-3 border-b border-stone-200"><span class="value-add-item">贈送 5 位圖文創作者文章曝光</span></td>
+                                        <td class="p-3 border-b border-stone-200"><span class="value-add-item">贈送 10 位圖文創作者文章曝光</span></td>
+                                    </tr>
+                                     <tr class="hover:bg-stone-50">
+                                        <td class="p-3 font-bold border-b border-stone-200">成效保證／目標</td>
+                                        <td class="p-3 border-b border-stone-200">-</td>
+                                        <td class="p-3 border-b border-stone-200">-</td>
+                                        <td class="p-3 border-b border-stone-200"><span class="value-add-item">觀看 > 80萬次<br>留言 > 200則<br>分享/收藏 > 2,000次</span></td>
+                                    </tr>
+                                    <tr class="hover:bg-stone-50">
+                                        <td class="p-3 font-bold border-b border-stone-200">試吃方案保證</td>
+                                        <td class="p-3 border-b border-stone-200"><span class="value-add-item">觀看 16萬次<br>留言 40則<br>分享/收藏 各400次</span></td>
+                                        <td class="p-3 border-b border-stone-200"><span class="value-add-item">觀看 27萬次<br>留言 70則<br>分享/收藏 各700次</span></td>
+                                        <td class="p-3 border-b border-stone-200">-</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TikTok Content -->
+                <div id="tiktok-content" class="content-section space-y-8">
+                    <div class="bg-white p-6 rounded-2xl shadow-lg">
+                        <h3 class="text-2xl font-bold mb-4 text-teal-700">TikTok 方案詳情</h3>
+                         <p class="text-stone-600 mb-6">此區塊專注於 TikTok 平台的行銷方案。透過與原生創作者合作，幫助品牌在 TikTok 建立內容起點，鋪設品牌聲量並創造記憶點。下方的表格詳細列出了各方案的內容與預期效益。</p>
+                        <div class="table-responsive">
+                            <table class="w-full text-left border-collapse">
+                               <thead class="bg-teal-50">
+                                    <tr>
+                                        <th class="p-3 font-bold uppercase text-teal-800 border-b border-stone-200">項目</th>
+                                        <th class="p-3 font-bold uppercase text-teal-800 border-b border-stone-200">方案一</th>
+                                        <th class="p-3 font-bold uppercase text-teal-800 border-b border-stone-200">方案二</th>
+                                        <th class="p-3 font-bold uppercase text-teal-800 border-b border-stone-200">方案三</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="hover:bg-stone-50">
+                                        <td class="p-3 font-bold border-b border-stone-200">策略定位</td>
+                                        <td class="p-3 border-b border-stone-200">品牌進場的第一步，穩健建立內容起點。</td>
+                                        <td class="p-3 border-b border-stone-200">鋪聲量、蓋記憶，打開你的「品牌入口」。</td>
+                                        <td class="p-3 border-b border-stone-200">快速打造高曝光，形成強大品牌聲量與互動熱度。</td>
+                                    </tr>
+                                    <tr class="hover:bg-stone-50">
+                                        <td class="p-3 font-bold border-b border-stone-200">費用</td>
+                                        <td class="p-3 border-b border-stone-200">$225,000</td>
+                                        <td class="p-3 border-b border-stone-200">$375,000</td>
+                                        <td class="p-3 border-b border-stone-200">$750,000</td>
+                                    </tr>
+                                    <tr class="hover:bg-stone-50">
+                                        <td class="p-3 font-bold border-b border-stone-200">合作數量</td>
+                                        <td class="p-3 border-b border-stone-200">3 位 TikTok 創作者</td>
+                                        <td class="p-3 border-b border-stone-200">5 位 TikTok 創作者</td>
+                                        <td class="p-3 border-b border-stone-200">10 位 TikTok 創作者</td>
+                                    </tr>
+                                    <tr class="hover:bg-stone-50">
+                                        <td class="p-3 font-bold border-b border-stone-200">內容規格</td>
+                                        <td class="p-3 border-b border-stone-200" colspan="3">每位 1 則 TikTok 原生貼文</td>
+                                    </tr>
+                                    <tr class="hover:bg-stone-50">
+                                        <td class="p-3 font-bold border-b border-stone-200">素材授權</td>
+                                        <td class="p-3 border-b border-stone-200">無</td>
+                                        <td class="p-3 border-b border-stone-200" colspan="2">授權一年，可用於社群、官網</td>
+                                    </tr>
+                                    <tr class="hover:bg-stone-50">
+                                        <td class="p-3 font-bold border-b border-stone-200">加值項目</td>
+                                        <td class="p-3 border-b border-stone-200">-</td>
+                                        <td class="p-3 border-b border-stone-200"><span class="value-add-item">贈送 IG 轉發 2 組</span></td>
+                                        <td class="p-3 border-b border-stone-200"><span class="value-add-item">贈送 IG 轉發 5 組</span></td>
+                                    </tr>
+                                     <tr class="hover:bg-stone-50">
+                                        <td class="p-3 font-bold border-b border-stone-200">成效保證／目標</td>
+                                        <td class="p-3 border-b border-stone-200">-</td>
+                                        <td class="p-3 border-b border-stone-200">-</td>
+                                        <td class="p-3 border-b border-stone-200"><span class="value-add-item">觀看 > 90萬次<br>留言 > 150則<br>分享/收藏 > 300次</span></td>
+                                    </tr>
+                                    <tr class="hover:bg-stone-50">
+                                        <td class="p-3 font-bold border-b border-stone-200">試吃方案保證</td>
+                                        <td class="p-3 border-b border-stone-200"><span class="value-add-item">觀看 18萬次<br>留言 30則<br>分享/收藏 各90次</span></td>
+                                        <td class="p-3 border-b border-stone-200"><span class="value-add-item">觀看 30萬次<br>留言 50則<br>分享/收藏 各150次</span></td>
+                                        <td class="p-3 border-b border-stone-200">-</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blogger Content -->
+                <div id="blogger-content" class="content-section space-y-8">
+                     <div class="bg-white p-6 rounded-2xl shadow-lg">
+                        <h3 class="text-2xl font-bold mb-4 text-teal-700">部落客方案詳情</h3>
+                        <p class="text-stone-600 mb-6">部落客方案專注於建立品牌在搜尋引擎中的長期效益（SEO）。從初步建立搜尋紀錄，到策略性地佈局關鍵字，最終目標是打造品牌的搜尋信任鏈。透過下表可了解各方案的執行深度與成效目標。</p>
+                        <div class="table-responsive">
+                            <table class="w-full text-left border-collapse">
+                               <thead class="bg-teal-50">
+                                    <tr>
+                                        <th class="p-3 font-bold uppercase text-teal-800 border-b border-stone-200">項目</th>
+                                        <th class="p-3 font-bold uppercase text-teal-800 border-b border-stone-200">方案一</th>
+                                        <th class="p-3 font-bold uppercase text-teal-800 border-b border-stone-200">方案二</th>
+                                        <th class="p-3 font-bold uppercase text-teal-800 border-b border-stone-200">方案三</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="hover:bg-stone-50">
+                                        <td class="p-3 font-bold border-b border-stone-200">策略定位</td>
+                                        <td class="p-3 border-b border-stone-200">建立品牌在搜尋結果中的「第一筆紀錄」。</td>
+                                        <td class="p-3 border-b border-stone-200">讓搜尋結果刻意佈局，而非偶然出現。</td>
+                                        <td class="p-3 border-b border-stone-200">打造搜尋場域的品牌信任鏈，長尾效益最大化。</td>
+                                    </tr>
+                                    <tr class="hover:bg-stone-50">
+                                        <td class="p-3 font-bold border-b border-stone-200">費用</td>
+                                        <td class="p-3 border-b border-stone-200">$187,500</td>
+                                        <td class="p-3 border-b border-stone-200">$375,000</td>
+                                        <td class="p-3 border-b border-stone-200">$675,000</td>
+                                    </tr>
+                                    <tr class="hover:bg-stone-50">
+                                        <td class="p-3 font-bold border-b border-stone-200">合作數量</td>
+                                        <td class="p-3 border-b border-stone-200">5 位部落客</td>
+                                        <td class="p-3 border-b border-stone-200">10 位部落客</td>
+                                        <td class="p-3 border-b border-stone-200">15 位部落客</td>
+                                    </tr>
+                                    <tr class="hover:bg-stone-50">
+                                        <td class="p-3 font-bold border-b border-stone-200">內容規格</td>
+                                        <td class="p-3 border-b border-stone-200">每位 1 篇 SEO 架構文章<br>(2組關鍵字擇1)</td>
+                                        <td class="p-3 border-b border-stone-200">每位 1 篇 SEO 架構文章<br>(4組關鍵字擇2)</td>
+                                        <td class="p-3 border-b border-stone-200">每位 1 篇 SEO 架構文章<br>(5組關鍵字擇3)</td>
+                                    </tr>
+                                    <tr class="hover:bg-stone-50">
+                                        <td class="p-3 font-bold border-b border-stone-200">素材授權</td>
+                                        <td class="p-3 border-b border-stone-200">無</td>
+                                        <td class="p-3 border-b border-stone-200">無</td>
+                                        <td class="p-3 border-b border-stone-200">授權一年，可轉載至官網、社群</td>
+                                    </tr>
+                                    <tr class="hover:bg-stone-50">
+                                        <td class="p-3 font-bold border-b border-stone-200">加值項目</td>
+                                        <td class="p-3 border-b border-stone-200">-</td>
+                                        <td class="p-3 border-b border-stone-200"><span class="value-add-item">社群轉發 5 組</span></td>
+                                        <td class="p-3 border-b border-stone-200"><span class="value-add-item">社群轉發 10 組<br>關鍵字優化追蹤 3 個月</span></td>
+                                    </tr>
+                                     <tr class="hover:bg-stone-50">
+                                        <td class="p-3 font-bold border-b border-stone-200">成效保證／目標</td>
+                                        <td class="p-3 border-b border-stone-200">-</td>
+                                        <td class="p-3 border-b border-stone-200">-</td>
+                                        <td class="p-3 border-b border-stone-200"><span class="value-add-item">至少 1 組關鍵字進入 Google 搜尋首頁</span></td>
+                                    </tr>
+                                    <tr class="hover:bg-stone-50">
+                                        <td class="p-3 font-bold border-b border-stone-200">試吃方案保證</td>
+                                        <td class="p-3 border-b border-stone-200" colspan="2"><span class="value-add-item">關鍵字維持前三頁自然曝光</span></td>
+                                        <td class="p-3 border-b border-stone-200">-</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- YouTube Content -->
+                <div id="youtube-content" class="content-section space-y-8">
+                    <div class="bg-white p-6 rounded-2xl shadow-lg">
+                        <h3 class="text-2xl font-bold mb-4 text-teal-700">YouTube 方案詳情</h3>
+                        <p class="text-stone-600 mb-6">YouTube 方案旨在為品牌打造可被搜尋的深度影音內容資產。從單支解說影片到多支長尾內容佈局，目標是強化品牌的搜尋信任力與能見度。各方案的合作規模與成效目標詳見下表。</p>
+                        <div class="table-responsive">
+                           <table class="w-full text-left border-collapse">
+                               <thead class="bg-teal-50">
+                                    <tr>
+                                        <th class="p-3 font-bold uppercase text-teal-800 border-b border-stone-200">項目</th>
+                                        <th class="p-3 font-bold uppercase text-teal-800 border-b border-stone-200">方案一</th>
+                                        <th class="p-3 font-bold uppercase text-teal-800 border-b border-stone-200">方案二</th>
+                                        <th class="p-3 font-bold uppercase text-teal-800 border-b border-stone-200">方案三</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                     <tr class="hover:bg-stone-50">
+                                        <td class="p-3 font-bold border-b border-stone-200">策略定位</td>
+                                        <td class="p-3 border-b border-stone-200">打造品牌可被搜尋的第一支解說內容。</td>
+                                        <td class="p-3 border-b border-stone-200">建立品牌認知與信任，從內容資產開始。</td>
+                                        <td class="p-3 border-b border-stone-200">打造品牌主題長尾牆，成為被搜尋的關鍵來源。</td>
+                                    </tr>
+                                    <tr class="hover:bg-stone-50">
+                                        <td class="p-3 font-bold border-b border-stone-200">費用</td>
+                                        <td class="p-3 border-b border-stone-200">$175,000</td>
+                                        <td class="p-3 border-b border-stone-200">$525,000</td>
+                                        <td class="p-3 border-b border-stone-200">$875,000</td>
+                                    </tr>
+                                    <tr class="hover:bg-stone-50">
+                                        <td class="p-3 font-bold border-b border-stone-200">合作數量</td>
+                                        <td class="p-3 border-b border-stone-200">1 位 YouTube 創作者</td>
+                                        <td class="p-3 border-b border-stone-200">3 位 YouTube 創作者</td>
+                                        <td class="p-3 border-b border-stone-200">5 位 YouTube 創作者</td>
+                                    </tr>
+                                    <tr class="hover:bg-stone-50">
+                                        <td class="p-3 font-bold border-b border-stone-200">內容規格</td>
+                                        <td class="p-3 border-b border-stone-200" colspan="3">每位創作者製作 1 支影片，風格與切角可依品牌需求微調</td>
+                                    </tr>
+                                    <tr class="hover:bg-stone-50">
+                                        <td class="p-3 font-bold border-b border-stone-200">素材授權</td>
+                                        <td class="p-3 border-b border-stone-200">無</td>
+                                        <td class="p-3 border-b border-stone-200" colspan="2">授權一年</td>
+                                    </tr>
+                                    <tr class="hover:bg-stone-50">
+                                        <td class="p-3 font-bold border-b border-stone-200">加值項目</td>
+                                        <td class="p-3 border-b border-stone-200">-</td>
+                                        <td class="p-3 border-b border-stone-200"><span class="value-add-item">YT Shorts 1支 或 社群轉發1位</span></td>
+                                        <td class="p-3 border-b border-stone-200"><span class="value-add-item">YT Shorts 3支 或 社群轉發3位<br>影片 SEO 優化服務</span></td>
+                                    </tr>
+                                     <tr class="hover:bg-stone-50">
+                                        <td class="p-3 font-bold border-b border-stone-200">成效保證／目標</td>
+                                        <td class="p-3 border-b border-stone-200">3個月內曝光 > 2萬次</td>
+                                        <td class="p-3 border-b border-stone-200">3個月內總曝光 > 6萬次</td>
+                                        <td class="p-3 border-b border-stone-200"><span class="value-add-item">3個月內總曝光 > 15萬次</span></td>
+                                    </tr>
+                                    <tr class="hover:bg-stone-50">
+                                        <td class="p-3 font-bold border-b border-stone-200">試吃方案保證</td>
+                                        <td class="p-3 border-b border-stone-200"><span class="value-add-item">曝光 > 2萬次</span></td>
+                                        <td class="p-3 border-b border-stone-200"><span class="value-add-item">曝光 > 6萬次</span></td>
+                                        <td class="p-3 border-b border-stone-200">-</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Forum Content -->
+                <div id="forum-content" class="content-section space-y-8">
+                    <div class="bg-white p-6 rounded-2xl shadow-lg">
+                        <h3 class="text-2xl font-bold mb-4 text-teal-700">論壇方案詳情</h3>
+                        <p class="text-stone-600 mb-6">論壇操作的核心在於整合素人口碑，創造「非業配感」的信任累積。方案結合長尾聲量佈局（如Dcard/PTT）與短尾聲量引爆（如Threads），為品牌建立自然可信的討論度。下表比較了不同規模的操作內容。</p>
+                         <div class="table-responsive">
+                           <table class="w-full text-left border-collapse">
+                               <thead class="bg-teal-50">
+                                    <tr>
+                                        <th class="p-3 font-bold uppercase text-teal-800 border-b border-stone-200">項目</th>
+                                        <th class="p-3 font-bold uppercase text-teal-800 border-b border-stone-200">方案一</th>
+                                        <th class="p-3 font-bold uppercase text-teal-800 border-b border-stone-200">方案二</th>
+                                        <th class="p-3 font-bold uppercase text-teal-800 border-b border-stone-200">方案三</th>
+                                        <th class="p-3 font-bold uppercase text-teal-800 border-b border-stone-200">方案四</th>
+                                        <th class="p-3 font-bold uppercase text-teal-800 border-b border-stone-200">方案五</th>
+                                        <th class="p-3 font-bold uppercase text-teal-800 border-b border-stone-200">方案六</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="hover:bg-stone-50">
+                                        <td class="p-3 font-bold border-b border-stone-200">策略定位</td>
+                                        <td class="p-3 border-b border-stone-200">搜尋與討論曝光基礎操作</td>
+                                        <td class="p-3 border-b border-stone-200">擴大搜尋關鍵字與自然推薦量</td>
+                                        <td class="p-3 border-b border-stone-200">打造搜尋聲量網與論壇主導力</td>
+                                        <td class="p-3 border-b border-stone-200">多讚，吸引更多自然討論與點擊</td>
+                                        <td class="p-3 border-b border-stone-200">多讚多留言，吸引更多討論與點擊</td>
+                                        <td class="p-3 border-b border-stone-200">在多個熱門話題佈下品牌討論度</td>
+                                    </tr>
+                                    <tr class="hover:bg-stone-50">
+                                        <td class="p-3 font-bold border-b border-stone-200">費用</td>
+                                        <td class="p-3 border-b border-stone-200">$65,000</td>
+                                        <td class="p-3 border-b border-stone-200">$180,000</td>
+                                        <td class="p-3 border-b border-stone-200">$500,000</td>
+                                        <td class="p-3 border-b border-stone-200">$99,000</td>
+                                        <td class="p-3 border-b border-stone-200">$200,000</td>
+                                        <td class="p-3 border-b border-stone-200">$50,000</td>
+                                    </tr>
+                                    <tr class="hover:bg-stone-50">
+                                        <td class="p-3 font-bold border-b border-stone-200">內容規格</td>
+                                        <td class="p-3 border-b border-stone-200">6 篇主文<br>20 組模擬留言</td>
+                                        <td class="p-3 border-b border-stone-200">18 篇主文<br>70 組模擬留言</td>
+                                        <td class="p-3 border-b border-stone-200">50 篇主文<br>100 組模擬留言<br>50 組素人圖文<br>3 個月風向檢測</td>
+                                        <td class="p-3 border-b border-stone-200">6 篇主文<br>600 讚<br>30 組模擬留言<br>1 個月海巡風向<br>3個月風向檢測</td>
+                                        <td class="p-3 border-b border-stone-200">6 篇主文<br>600 讚<br>300 組模擬留言<br>1 個月海巡風向<br>3個月風向檢測</td>
+                                        <td class="p-3 border-b border-stone-200">100 組素人討論導風向</td>
+                                    </tr>
+                                    <tr class="hover:bg-stone-50">
+                                        <td class="p-3 font-bold border-b border-stone-200">素材授權</td>
+                                        <td class="p-3 border-b border-stone-200" colspan="6">無</td>
+                                    </tr>
+                                    <tr class="hover:bg-stone-50">
+                                        <td class="p-3 font-bold border-b border-stone-200">加值項目</td>
+                                        <td class="p-3 border-b border-stone-200">-</td>
+                                        <td class="p-3 border-b border-stone-200">-</td>
+                                        <td class="p-3 border-b border-stone-200"><span class="value-add-item">多平台海巡機制<br>品牌延伸字搜尋結果追蹤<br>素人討論風向100組</span></td>
+                                        <td class="p-3 border-b border-stone-200" colspan="3">-</td>
+                                    </tr>
+                                     <tr class="hover:bg-stone-50">
+                                        <td class="p-3 font-bold border-b border-stone-200">成效保證／目標</td>
+                                        <td class="p-3 border-b border-stone-200">-</td>
+                                        <td class="p-3 border-b border-stone-200">-</td>
+                                        <td class="p-3 border-b border-stone-200"><span class="value-add-item">指定平台品牌延伸字搜尋結果第一頁「做滿」<br>統計總瀏覽數與預期爆文 3~5篇</span></td>
+                                        <td class="p-3 border-b border-stone-200" colspan="3">-</td>
+                                    </tr>
+                                    <tr class="hover:bg-stone-50">
+                                        <td class="p-3 font-bold border-b border-stone-200">試吃方案保證</td>
+                                        <td class="p-3 border-b border-stone-200"><span class="value-add-item">提供三組關鍵字<br>6篇文中 2篇登上搜尋前兩頁</span></td>
+                                        <td class="p-3 border-b border-stone-200"><span class="value-add-item">提供三組關鍵字<br>18篇文中 3篇登上搜尋第一頁<br>Threads 爆文一篇</span></td>
+                                        <td class="p-3 border-b border-stone-200" colspan="4">-</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- News Content -->
+                <div id="news-content" class="content-section space-y-8">
+                    <div class="bg-white p-6 rounded-2xl shadow-lg">
+                        <h3 class="text-2xl font-bold mb-4 text-teal-700">新聞口碑方案詳情</h3>
+                        <p class="text-stone-600 mb-6">新聞口碑方案旨在為品牌打造具公信力的媒體曝光。從入門的新聞發稿，到整合媒體活動、記者會與深度專訪，逐步為品牌建立權威性與市場信任度。各方案的執行內容與保證刊登的媒體數量如下表所示。</p>
+                        <div class="table-responsive">
+                            <table class="w-full text-left border-collapse">
+                               <thead class="bg-teal-50">
+                                    <tr>
+                                        <th class="p-3 font-bold uppercase text-teal-800 border-b border-stone-200">項目</th>
+                                        <th class="p-3 font-bold uppercase text-teal-800 border-b border-stone-200">方案A</th>
+                                        <th class="p-3 font-bold uppercase text-teal-800 border-b border-stone-200">方案B</th>
+                                        <th class="p-3 font-bold uppercase text-teal-800 border-b border-stone-200">方案C</th>
+                                        <th class="p-3 font-bold uppercase text-teal-800 border-b border-stone-200">方案D</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="hover:bg-stone-50">
+                                        <td class="p-3 font-bold border-b border-stone-200">策略定位</td>
+                                        <td class="p-3 border-b border-stone-200">打造品牌可信起點。</td>
+                                        <td class="p-3 border-b border-stone-200">讓品牌不只被看見，還能成為行銷範本。</td>
+                                        <td class="p-3 border-b border-stone-200">整合故事、現場與權威曝光的三位一體操作。</td>
+                                        <td class="p-3 border-b border-stone-200">為品牌領袖打造具代表性的出場場景。</td>
+                                    </tr>
+                                    <tr class="hover:bg-stone-50">
+                                        <td class="p-3 font-bold border-b border-stone-200">費用</td>
+                                        <td class="p-3 border-b border-stone-200">$150,000</td>
+                                        <td class="p-3 border-b border-stone-200">$400,000</td>
+                                        <td class="p-3 border-b border-stone-200">$660,000</td>
+                                        <td class="p-3 border-b border-stone-200">$1,000,000</td>
+                                    </tr>
+                                    <tr class="hover:bg-stone-50">
+                                        <td class="p-3 font-bold border-b border-stone-200">內容規格</td>
+                                        <td class="p-3 border-b border-stone-200">新聞稿撰寫與發佈</td>
+                                        <td class="p-3 border-b border-stone-200">方案A內容 +<br>小型媒體活動操作<br>記者邀約(3-5位)<br>活動側拍+影片</td>
+                                        <td class="p-3 border-b border-stone-200">方案B內容擴充 +<br>中型記者會<br>記者邀約(8-10位)<br>撰寫2篇新聞稿</td>
+                                        <td class="p-3 border-b border-stone-200"><span class="value-add-item">方案C內容擴充 +<br>重量媒體專訪<br>記者邀約(10位以上)<br>形象影片拍攝</span></td>
+                                    </tr>
+                                    <tr class="hover:bg-stone-50">
+                                        <td class="p-3 font-bold border-b border-stone-200">成效保證／目標</td>
+                                        <td class="p-3 border-b border-stone-200">保證刊登 4-5 家以上<br>入口級媒體</td>
+                                        <td class="p-3 border-b border-stone-200">保證刊登 4-5 家以上<br>媒體平台</td>
+                                        <td class="p-3 border-b border-stone-200">保證刊登 10 家以上<br>入口級與垂直媒體</td>
+                                        <td class="p-3 border-b border-stone-200"><span class="value-add-item">保證刊登 15 家以上<br>含產業權威平台</span></td>
+                                    </tr>
+                                    <tr class="hover:bg-stone-50">
+                                        <td class="p-3 font-bold border-b border-stone-200">購買限制</td>
+                                        <td class="p-3 border-b border-stone-200">-</td>
+                                        <td class="p-3 border-b border-stone-200">-</td>
+                                        <td class="p-3 border-b border-stone-200">-</td>
+                                        <td class="p-3 border-b border-stone-200">需完成至少3次<br>新聞/公關合作</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const navButtons = document.querySelectorAll('.nav-button');
+            const contentSections = document.querySelectorAll('.content-section');
+
+            navButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const target = this.dataset.target;
+
+                    navButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+
+                    contentSections.forEach(section => {
+                        if (section.id === `${target}-content`) {
+                            section.classList.add('active');
+                        } else {
+                            section.classList.remove('active');
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
+
+
